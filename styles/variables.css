@@ -1,1 +1,25 @@
 /* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
+:root {
+  --PressStart2P: 'Press Start 2P';
+  --Inter: 'Inter', sans-serif;
+  --card-title-weight: 715;
+  --card-text-weight: 410;
+  --background-gradient: 
+    repeating-linear-gradient(
+      to right, #d3d3d3 0  2px, transparent 2px 4px
+    ),
+    repeating-linear-gradient(
+      to bottom, #d3d3d3 0  2px, transparent 2px 4px 
+    ),
+    repeating-linear-gradient(
+      to bottom, #e7e7e7 0.01%, #1a1a1a 100%
+    );
+    --content-width: clamp(375px, 48.6vw, 700px);
+    --background: #fff;
+    --color-shadow:     
+      -1px -1px 0 #fff,
+      1px -1px 0 #fff,
+      -1px 1px 0 #fff,
+      1px 1px 0 #fff;;
+      --gradient-height: clamp( 667px, 66.7vw, 960px);
+}
