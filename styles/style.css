@@ -32,8 +32,8 @@
   font-family: var(--PressStart2P);
   border: 2px solid black;
   background-color: var(--background);
-  padding-block: clamp(122px, 9vw, 130px);
-  padding-inline: clamp(16px, 8.5vw, 122.5px);
+  padding-block: clamp(120px, calc(116.479px + 0.939vw), 130px);
+  padding-inline: clamp(16px, calc(-21.5px + 10vw), 122.5px);
 }
 
 .header__logo-group {
@@ -45,11 +45,12 @@
 }
 
 .header__title {
-
+  font-size: clamp(49px, calc(43.366px + 1.502vw), 65px);
 }
 
 .header__subtitle {
-
+  font-size: 14px;
+  text-transform: uppercase;
 }
 
 .content {
@@ -64,11 +65,21 @@
   border: 2px solid black;
 }
 
+.content-card__title {
+  font-size: 18px;
+  font-variation-settings: 'wght' 715;
+  font-family: var(--Inter);
+  padding-block: 4px;
+  padding-inline: 10px;
+  border-bottom: 2px solid black;
+}
+
 .content-card__text {
   margin-block-start: 25px;
   margin-inline-start: 25px;
   margin-inline-end: 25px;
   font-size: 18px;
+  line-height: 21px;
 }
 
 .content-card__text + .content-card__text {
@@ -86,13 +97,16 @@
 }
 .content-card__image {
   position: relative;
+  block-size: 373px;
+  border-bottom: 2px solid black;
 }
 
 
 .content-card__image-img {
   display: block;
   width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: cover;
 }
 
 .image__label {
@@ -120,7 +134,7 @@
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  gap: 12px;
+  gap: 6px;
   margin-inline-end: 25px;
   margin-block-end: 25px;
 }
@@ -159,7 +173,8 @@
   background-color: transparent;
   border: 2px solid black;
   padding-block-start: 17px;
-  padding-block-end: 17px;
+  padding-block-end: 14px;
+  padding-inline: 17px;
 }
 
 .card__action__modal {
@@ -174,12 +189,37 @@
 .dialog[open] {
   display: grid;
   grid-template-columns: auto 1fr;
+  row-gap: 30px;
+  column-gap: 20px;
+  padding-block: 30px;
+  padding-inline: 40px;
 }
 
 .dialog form {
   grid-column: 1 / -1;
 }
 
+.dialog form button {
+  width: 100%;
+  padding-block: 12.5px;
+}
+
 .dialog::backdrop {
-  background: rgb(0 0 0 / 0.7);
+  background: rgb(0 0 0 / 0.75);
+}
+
+.dialog__text {
+  font-family: var(--PressStart2P);
+  font-size: 14px;
+  line-height: 150%;
+  text-transform: uppercase;
+}
+
+.dialog__text-part {
+  margin-inline-start: 21px;
+  white-space: nowrap;
+}
+
+.dialog svg {
+  margin-block: 12px;
 }

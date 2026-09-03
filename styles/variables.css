@@ -14,12 +14,12 @@
     repeating-linear-gradient(
       to bottom, #e7e7e7 0.01%, #1a1a1a 100%
     );
-    --content-width: clamp(375px, 48.6vw, 700px);
+    --content-width: clamp(375px, calc(260.563px + 30.516vw), 700px);
     --background: #fff;
     --color-shadow:     
       -1px -1px 0 #fff,
       1px -1px 0 #fff,
       -1px 1px 0 #fff,
       1px 1px 0 #fff;;
-      --gradient-height: clamp( 667px, 66.7vw, 960px);
+      --gradient-height: clamp(667px, calc(563.831px + 27.512vw), 960px);
 }
