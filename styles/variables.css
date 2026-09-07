@@ -21,5 +21,4 @@
       1px -1px 0 #fff,
       -1px 1px 0 #fff,
       1px 1px 0 #fff;;
-      --gradient-height: clamp(667px, calc(563.831px + 27.512vw), 960px);
 }
