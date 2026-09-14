@@ -125,8 +125,6 @@
 .image__label {
   position: absolute;
   inset-block-start: 25px;
-  /* inset-block-end: 332px;
-  inset-inline-start: 248px; */
   inset-inline-end: 25px;
   opacity: 0.8;
   mix-blend-mode: hard-light;
@@ -155,14 +153,28 @@
 .button__text {
   font-family: var(--PressStart2P);
   font-size: 14px;
+  position: relative;
+  z-index: 1;
+  color: var(--button-text-color);
+  mix-blend-mode: difference;
 }
 
 .card__icon-button {
-  border: none;
+  border: 2px solid transparent;
   background-color: transparent;
+  transition: border-color 0.3s ease;
+}
+
+.card__icon-button:focus {
+  outline: none;
+}
+
+.card__icon-button:focus-visible {
+  border-color: var(--accent-color);
 }
 
 .card__like-button {
+  position: relative;
   background-color: transparent;
   inline-size: 130px;
   block-size: 38px;
@@ -171,6 +183,20 @@
   align-items: center;
   justify-content: center;
   transition: box-shadow 0.3s ease;
+}
+
+.card__like-button::before {
+  content: '';
+  position: absolute;
+  background-color: var(--accent-color);
+  transform: scaleX(0);
+  transform-origin: left;
+  inset: 0;
+  transition: transform 0.5s ease-in-out;
+}
+
+.card__like-button:hover::before {
+  transform: scaleX(1);
 }
 
 .card__like-button:focus {
@@ -189,17 +215,40 @@
   gap: 8px;
   flex-direction: column;
   align-items: center;
-  background-color: transparent;
+  background-color: #fff;
   border: 2px solid black;
   padding-block-start: 17px;
   padding-block-end: 14px;
   padding-inline: 17px;
   transition: box-shadow 0.3s ease;
+  position: relative;
+}
+
+.card__save-button::before {
+  content: '';
+  position: absolute;
+  background-color: var(--accent-color);
+  transform: scaleX(0);
+  transform-origin: left;
+  inset: 0;
+  transition: transform 0.5s ease-in-out;
+}
+
+.card__save-button:hover::before {
+  transform: scaleX(1);  
 }
 
 .card__save-button:focus {
   outline: none;
   box-shadow: 2px 2px 0 var(--accent-color);
+}
+
+.card__save-icon {
+  position: relative;
+  z-index: 1;
+  color: var(--button-text-color);
+  mix-blend-mode: difference;
+  filter: invert(1);
 }
 
 @media (width > 375px) {
@@ -218,7 +267,22 @@
 .card__action__modal {
   background-color: transparent;
   border: 2px solid black;
-  transition: 2px 2px 0 var(--accent-color); 
+  transition: 2px 2px 0 var(--accent-color);
+  position: relative; 
+}
+
+.card__action__modal::before {
+  content: '';
+  position: absolute;
+  background-color: var(--accent-color);
+  transform: scaleX(0);
+  transform-origin: left;
+  inset: 0;
+  transition: transform 0.5s ease-in-out;  
+}
+
+.card__action__modal:hover::before {
+  transform: scaleX(1);   
 }
 
 .card__action__modal:focus {
