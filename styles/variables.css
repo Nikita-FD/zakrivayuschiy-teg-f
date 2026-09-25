@@ -23,4 +23,7 @@
       1px 1px 0 #fff;;
       --accent-color: #000;
       --button-text-color: #fff;
+      --contour-color: #000;
+      --animation-fill-color: red;
+      --sparks-fill-color: red;
 }
