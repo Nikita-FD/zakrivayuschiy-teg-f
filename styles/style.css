@@ -138,7 +138,7 @@
   filter: hue-rotate(0.9turn);;
 }
 
-.image__label {
+.content-card__image-label {
   position: absolute;
   inset-block-start: 25px;
   inset-inline-end: 25px;
@@ -150,14 +150,14 @@
 }
 
 @supports ((text-stroke: 1px #fff;) or (-webkit-text-stroke: 1px #fff;)) {
-  .image__label {
+  .content-card__image-label {
     -webkit-text-stroke: 1px #fff;
     text-stroke: 1px #fff;
     text-shadow: none;
   }
 }
 
-.card__actions__main {
+.content-card__actions {
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -222,13 +222,13 @@
   box-shadow: 2px 2px 0 var(--accent-color);
 }
 
-.card__action__save {
+.save-action {
   display: flex;
   justify-content: center;
   margin-block-end: 100px;
 }
 
-.card__save-button {
+.save-action__button {
   display: flex;
   gap: 8px;
   flex-direction: column;
@@ -242,7 +242,7 @@
   position: relative;
 }
 
-.card__save-button::before {
+.save-action__button::before {
   content: '';
   position: absolute;
   background-color: var(--accent-color);
@@ -252,16 +252,16 @@
   transition: transform 0.5s ease-in-out;
 }
 
-.card__save-button:hover::before {
+.save-action__button:hover::before {
   transform: scaleX(1);  
 }
 
-.card__save-button:focus {
+.save-action__button:focus {
   outline: none;
   box-shadow: 2px 2px 0 var(--accent-color);
 }
 
-.card__save-icon {
+.save-action__icon {
   position: relative;
   z-index: 1;
   color: var(--button-text-color);
@@ -270,26 +270,26 @@
 }
 
 @media (width > 375px) {
-  .card__save-button {
+  .save-action__button {
     flex-direction: row;
   }
 }
 
 @media (width > 375px) {
-  .card__save-icon {
+  .save-action__icon {
     inline-size: 21px;
     block-size: 21px;
   }
 }
 
-.card__action__modal {
+.dialog__button {
   background-color: transparent;
   border: 2px solid black;
   transition: 2px 2px 0 var(--accent-color);
   position: relative; 
 }
 
-.card__action__modal::before {
+.dialog__button::before {
   content: '';
   position: absolute;
   background-color: var(--accent-color);
@@ -299,11 +299,11 @@
   transition: transform 0.5s ease-in-out;  
 }
 
-.card__action__modal:hover::before {
+.dialog__button:hover::before {
   transform: scaleX(1);   
 }
 
-.card__action__modal:focus {
+.dialog__button:focus {
   outline: none;
   box-shadow: 2px 2px 0 var(--accent-color);  
 }
