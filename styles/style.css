@@ -30,7 +30,7 @@
 .header {
   margin-block-start: 100px;
   margin-block-end: clamp(97px, calc(101.056px - 0.282vw), 100px);
-  font-family: var(--PressStart2P);
+  font-family: var(--PressStart2P), fantasy;
   border: 2px solid black;
   background-color: var(--background);
   padding-block: clamp(120px, calc(116.479px + 0.939vw), 130px);
@@ -45,11 +45,11 @@
   gap: 20px;
 }
 
-.header__title {
+.header__logo {
   font-size: clamp(49px, calc(43.366px + 1.502vw), 65px);
 }
 
-.header__subtitle {
+.header__title {
   font-size: clamp(14px, calc(10.831px + 0.845vw), 23px);
   text-transform: uppercase;
 }
@@ -58,18 +58,18 @@
   display: flex;
   flex-direction: column;
   gap: 50px;
-  background-color: var(--background);
 }
 
 .content-card {
   inline-size: 100%;
   border: 2px solid black;
+  background-color: var(--background);
 }
 
 .content-card__title {
   font-size: 18px;
   font-variation-settings: 'wght' 715;
-  font-family: var(--Inter);
+  font-family: var(--Inter), sans-serif;
   padding-block: 4px;
   padding-inline: 10px;
   border-bottom: 2px solid black;
@@ -135,16 +135,16 @@
 }
 
 .content-card__image-img_filter_hue_rotate {
-  filter: hue-rotate(0.9turn);;
+  filter: hue-rotate(0.9turn);
 }
 
 .content-card__image-label {
   position: absolute;
   inset-block-start: 25px;
   inset-inline-end: 25px;
-  opacity: 0.8;
+  opacity: 0.5;
   mix-blend-mode: hard-light;
-  font-family: var(--PressStart2P);
+  font-family: var(--PressStart2P), fantasy;
   font-size: 14px;
   text-shadow: var(--color-shadow);
 }
@@ -167,7 +167,7 @@
 }
 
 .button__text {
-  font-family: var(--PressStart2P);
+  font-family: var(--PressStart2P), fantasy;
   font-size: 14px;
   position: relative;
   z-index: 1;
@@ -191,19 +191,16 @@
   border-color: var(--accent-color);
 }
 
-.card__like-button {
-  position: relative;
-  background-color: transparent;
-  inline-size: 130px;
-  block-size: 38px;
-  border: 2px solid black;
+.button {
   display: flex;
   align-items: center;
   justify-content: center;
+  border: 2px solid black;
   transition: box-shadow 0.3s ease;
+  position: relative;
 }
 
-.card__like-button::before {
+.button::before {
   content: '';
   position: absolute;
   background-color: var(--accent-color);
@@ -213,13 +210,19 @@
   transition: transform 0.5s ease-in-out;
 }
 
-.card__like-button:hover::before {
+.button:hover::before {
   transform: scaleX(1);
 }
 
-.card__like-button:focus {
+.button:focus {
   outline: none;
   box-shadow: 2px 2px 0 var(--accent-color);
+}
+
+.card__like-button {
+  background-color: transparent;
+  inline-size: 130px;
+  block-size: 38px;
 }
 
 .save-action {
@@ -229,36 +232,13 @@
 }
 
 .save-action__button {
-  display: flex;
   gap: 8px;
   flex-direction: column;
-  align-items: center;
   background-color: #fff;
-  border: 2px solid black;
   padding-block-start: 17px;
   padding-block-end: 14px;
   padding-inline: 17px;
-  transition: box-shadow 0.3s ease;
-  position: relative;
-}
 
-.save-action__button::before {
-  content: '';
-  position: absolute;
-  background-color: var(--accent-color);
-  transform: scaleX(0);
-  transform-origin: left;
-  inset: 0;
-  transition: transform 0.5s ease-in-out;
-}
-
-.save-action__button:hover::before {
-  transform: scaleX(1);
-}
-
-.save-action__button:focus {
-  outline: none;
-  box-shadow: 2px 2px 0 var(--accent-color);
 }
 
 .save-action__icon {
@@ -283,51 +263,28 @@
 }
 
 .dialog__button {
+  width: 100%;
+  padding-block: 12.5px;
   background-color: transparent;
-  border: 2px solid black;
-  transition: 2px 2px 0 var(--accent-color);
-  position: relative;
-}
-
-.dialog__button::before {
-  content: '';
-  position: absolute;
-  background-color: var(--accent-color);
-  transform: scaleX(0);
-  transform-origin: left;
-  inset: 0;
-  transition: transform 0.5s ease-in-out;
-}
-
-.dialog__button:hover::before {
-  transform: scaleX(1);
-}
-
-.dialog__button:focus {
-  outline: none;
-  box-shadow: 2px 2px 0 var(--accent-color);
 }
 
 .dialog {
   display: none;
+  padding: 0;
 }
 
 .dialog[open] {
   display: grid;
-  grid-template-columns: auto 1fr;
+  grid-template-columns: auto minmax(0, 1fr);
   row-gap: 30px;
   column-gap: 20px;
   padding-block: 30px;
   padding-inline: 40px;
+  border: 2px solid var(--accent-color);
 }
 
-.dialog form {
+.dialog__form {
   grid-column: 1 / -1;
-}
-
-.dialog form button {
-  width: 100%;
-  padding-block: 12.5px;
 }
 
 .dialog::backdrop {
@@ -335,7 +292,7 @@
 }
 
 .dialog__text {
-  font-family: var(--PressStart2P);
+  font-family: var(--PressStart2P), fantasy;
   font-size: 14px;
   line-height: 150%;
   text-transform: uppercase;
@@ -344,10 +301,9 @@
 
 .dialog__text-part {
   margin-inline-start: 21px;
-  white-space: nowrap;
 }
 
-.dialog svg {
+.dialog__icon {
   margin-block: 12px;
 }
 
