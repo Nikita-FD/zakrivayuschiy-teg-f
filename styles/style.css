@@ -279,7 +279,7 @@
   row-gap: 30px;
   column-gap: 20px;
   padding-block: 30px;
-  padding-inline: 40px;
+  padding-inline: clamp(30px, calc(43.521px - 0.939vw), 40px);
   border: 2px solid var(--accent-color);
 }
 
